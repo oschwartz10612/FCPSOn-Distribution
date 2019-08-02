@@ -9,7 +9,7 @@ deploy:
   provider: gae
   skip_cleanup: true
   keyfile: client-secret.json
-  project: fcps-distrbution
+  project: fcpson-distrbution
   default: true
 before_install:
 - openssl aes-256-cbc -K $encrypted_ce88f7f76251_key -iv $encrypted_ce88f7f76251_iv
