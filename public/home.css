@@ -1,0 +1,30 @@
+
+.row {
+    width: 100%;
+    height: 50vh;
+}
+.kiosk {
+    margin: 10px 10px 10px 10px;
+}
+.center {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.button {
+    width: 100%;
+    height: 100%;
+}
+#kiosk1 {
+    background-color: #ffd359;
+}
+#kiosk2 {
+    background-color: #5cff59;
+}
+#kiosk3 {
+    background-color: #59bdff;
+}
+#kiosk4 {
+    background-color: #bd59ff;
+}
