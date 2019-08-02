@@ -4,7 +4,8 @@
     height: 50vh;
 }
 .kiosk {
-    margin: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 40px;
 }
 .center {
@@ -19,13 +20,21 @@
 }
 #kiosk1 {
     background-color: #ffd359;
+    border-radius: 25px;
+    margin-left: 5px;
 }
 #kiosk2 {
     background-color: #5cff59;
+    border-radius: 25px;
+    margin-right: 5px;
 }
 #kiosk3 {
     background-color: #59bdff;
+    border-radius: 25px;
+    margin-left: 5px;
 }
 #kiosk4 {
     background-color: #bd59ff;
+    border-radius: 25px;
+    margin-right: 5px;
 }
