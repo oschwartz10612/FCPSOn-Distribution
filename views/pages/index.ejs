@@ -59,16 +59,16 @@
     });
 
     kiosk1.onclick = function() {
-        kiosk1Text.innerHTML = "Completed";
+        socket.emit('kiosk1', 'Complete');
     };
     kiosk2.onclick = function() {
-        kiosk2Text.innerHTML = "Completed";
+        socket.emit('kiosk2', 'Complete');
     };
     kiosk3.onclick = function() {
-        kiosk3Text.innerHTML = "Completed";
+        socket.emit('kiosk3', 'Complete');
     };
     kiosk4.onclick = function() {
-        kiosk4Text.innerHTML = "Completed";
+        socket.emit('kiosk4', 'Complete');
     };
 
 </script>

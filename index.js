@@ -30,5 +30,21 @@ app.post('/update', function(req, res) {
     res.send('Sucsess!');
 });
 
+io.on('connection', function(client) {
+     client.on('kiosk1', function(data) {
+        io.emit('kiosk1', data);   
+     });
+    client.on('kiosk2', function(data) {
+        io.emit('kiosk2', data);   
+     });
+    client.on('kiosk3', function(data) {
+        io.emit('kiosk3', data);   
+     });
+    client.on('kiosk4', function(data) {
+        io.emit('kiosk4', data);   
+     });
+ });
+ 
+
 server.listen(port);
   
