@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Distribution Board</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <script src="/jquery.min.js"></script>
+    <script language="javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/6tiles.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col kiosk">
+                <div role="button" class="button" id="kiosk1"><p class="center" id="kiosk1Text">Complete</p></div>
+            </div>
+            <div class="col kiosk">
+                <div role="button" class="button" id="kiosk2"><p class="center" id="kiosk2Text">Complete</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col kiosk">
+                <div role="button" class="button" id="kiosk3"><p class="center" id="kiosk3Text">Complete</p></div>
+            </div>
+            <div class="col kiosk">
+                <div role="button" class="button" id="kiosk4"><p class="center" id="kiosk4Text">Complete</p></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col kiosk">
+                <div role="button" class="button" id="kiosk5"><p class="center" id="kiosk5Text">Complete</p></div>
+            </div>
+            <div class="col kiosk">
+                <div role="button" class="button" id="kiosk6"><p class="center" id="kiosk6Text">Complete</p></div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+
+<script src="/socket.io.js"></script>
+<script>
+    var socket = io.connect(window.location.href);
+
+    var kiosk1Text = document.getElementById('kiosk1Text');
+    var kiosk2Text = document.getElementById('kiosk2Text');
+    var kiosk3Text = document.getElementById('kiosk3Text');
+    var kiosk4Text = document.getElementById('kiosk4Text');
+    var kiosk5Text = document.getElementById('kiosk5Text');
+    var kiosk6Text = document.getElementById('kiosk6Text');
+    var kiosk1 = document.getElementById('kiosk1');
+    var kiosk2 = document.getElementById('kiosk2');
+    var kiosk3 = document.getElementById('kiosk3');
+    var kiosk4 = document.getElementById('kiosk4');
+    var kiosk5 = document.getElementById('kiosk5');
+    var kiosk6 = document.getElementById('kiosk6');
+
+    socket.on('kiosk1', function (data) {
+        kiosk1Text.innerHTML = data;
+    });
+    socket.on('kiosk2', function (data) {
+        kiosk2Text.innerHTML = data;
+    });
+    socket.on('kiosk3', function (data) {
+        kiosk3Text.innerHTML = data;   
+    });
+    socket.on('kiosk4', function (data) {
+        kiosk4Text.innerHTML = data;
+    });
+    socket.on('kiosk5', function (data) {
+        kiosk5Text.innerHTML = data;
+    });
+    socket.on('kiosk6', function (data) {
+        kiosk6Text.innerHTML = data;
+    });
+
+    kiosk1.onclick = function() {
+        socket.emit('kiosk1', 'Complete');
+    };
+    kiosk2.onclick = function() {
+        socket.emit('kiosk2', 'Complete');
+    };
+    kiosk3.onclick = function() {
+        socket.emit('kiosk3', 'Complete');
+    };
+    kiosk4.onclick = function() {
+        socket.emit('kiosk4', 'Complete');
+    };
+    kiosk5.onclick = function() {
+        socket.emit('kiosk5', 'Complete');
+    };
+    kiosk6.onclick = function() {
+        socket.emit('kiosk6', 'Complete');
+    };
+
+</script>
