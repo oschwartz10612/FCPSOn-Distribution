@@ -37,23 +37,26 @@ p {
 }
 #kiosk2 {
     background-image: url("/img/Derek.png");
-    background-color: #5cff59;
+    background-color: #4287f5;
     margin-right: 5px;
 }
 #kiosk3 {
     background-image: url("/img/Kristina.png");
-    background-color: #34eb8c;
+    background-color: #45f542;
     margin-left: 5px;
 }
 #kiosk4 {
+    background-image: url("/img/others.png");
     background-color: #bd59ff;
     margin-right: 5px;
 }
 #kiosk5 {
+    background-image: url("/img/others.png");
     background-color: #eb4034;
     margin-right: 5px;
 }
 #kiosk6 {
-    background-color: #59bdff;
+    background-image: url("/img/others.png");
+    background-color: #f542e0;
     margin-right: 5px;
 }
