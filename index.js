@@ -64,6 +64,9 @@ io.on('connection', function(client) {
     client.on('kiosk6', function(data) {
         io.emit('kiosk6', data);   
     });
+    client.on('panic', function(data) {
+        io.emit('panic', data);   
+    });
  });
  
 

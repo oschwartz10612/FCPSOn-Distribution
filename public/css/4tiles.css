@@ -50,3 +50,9 @@ p {
     background-color: #bd59ff;
     margin-right: 5px;
 }
+.panic {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}

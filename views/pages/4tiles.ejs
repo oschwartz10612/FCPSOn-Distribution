@@ -13,6 +13,7 @@
 
 </head>
 <body>
+    <div class="panic" id="panic"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col kiosk">
@@ -46,18 +47,26 @@
     var kiosk2 = document.getElementById('kiosk2');
     var kiosk3 = document.getElementById('kiosk3');
     var kiosk4 = document.getElementById('kiosk4');
+    var panic = document.getElementById('panic');
 
     socket.on('kiosk1', function (data) {
         kiosk1Text.innerHTML = data;
+        speach(data);
     });
     socket.on('kiosk2', function (data) {
         kiosk2Text.innerHTML = data;
+        speach(data);
     });
     socket.on('kiosk3', function (data) {
         kiosk3Text.innerHTML = data;   
+        speach(data);
     });
     socket.on('kiosk4', function (data) {
         kiosk4Text.innerHTML = data;
+        speach(data);
+    });
+    socket.on('panic', function (data) {
+        helicopter();
     });
 
     kiosk1.onclick = function() {
@@ -73,4 +82,25 @@
         socket.emit('kiosk4', 'Complete');
     };
 
+    panic.onclick = function() {
+        socket.emit('panic', 'panic');
+    };
+
+    function helicopter() {
+        var msg = new SpeechSynthesisUtterance('here comes my attack helicopter');
+        window.speechSynthesis.speak(msg);
+        var talk = 'soi';
+        for (let index = 1; index < 10; index++) {
+            var msg = new SpeechSynthesisUtterance(talk);
+            msg.rate = index;
+            window.speechSynthesis.speak(msg);
+            talk += ' soi';
+        }
+    }
+    function speach(data) {
+        if (data != "Complete") {
+            var msg = new SpeechSynthesisUtterance(data);
+            window.speechSynthesis.speak(msg);
+        }
+    }
 </script>
