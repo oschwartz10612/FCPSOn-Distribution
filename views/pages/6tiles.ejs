@@ -62,30 +62,51 @@
 
     socket.on('kiosk1', function (data) {
         kiosk1Text.innerHTML = data;
+        kiosk1.style.backgroundColor = "white";
+        setTimeout(() => {
+            kiosk1.style.backgroundColor = "";
+        }, 70);
         speach(data);
     });
     socket.on('kiosk2', function (data) {
         kiosk2Text.innerHTML = data;
+        kiosk2.style.backgroundColor = "white";
+        setTimeout(() => {
+            kiosk2.style.backgroundColor = "";
+        }, 70);
         speach(data);
     });
     socket.on('kiosk3', function (data) {
-        kiosk3Text.innerHTML = data;
-        speach(data);   
+        kiosk3Text.innerHTML = data;   
+        kiosk3.style.backgroundColor = "white";
+        setTimeout(() => {
+            kiosk3.style.backgroundColor = "";
+        }, 70);
+        speach(data);
     });
     socket.on('kiosk4', function (data) {
         kiosk4Text.innerHTML = data;
+        kiosk4.style.backgroundColor = "white";
+        setTimeout(() => {
+            kiosk4.style.backgroundColor = "";
+        }, 70);
         speach(data);
     });
     socket.on('kiosk5', function (data) {
         kiosk5Text.innerHTML = data;
+        kiosk5.style.backgroundColor = "white";
+        setTimeout(() => {
+            kiosk5.style.backgroundColor = "";
+        }, 70);
         speach(data);
     });
     socket.on('kiosk6', function (data) {
         kiosk6Text.innerHTML = data;
+        kiosk6.style.backgroundColor = "white";
+        setTimeout(() => {
+            kiosk6.style.backgroundColor = "";
+        }, 70);
         speach(data);
-    });
-    socket.on('panic', function (data) {
-        helicopter();
     });
 
     kiosk1.onclick = function() {
@@ -109,8 +130,6 @@
     panic.onclick = function() {
         socket.emit('panic', 'panic');
     };
-
-
     
     function helicopter() {
         var msg = new SpeechSynthesisUtterance('here comes my attack helicopter');
