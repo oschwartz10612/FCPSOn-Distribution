@@ -108,6 +108,9 @@
         }, 70);
         speach(data);
     });
+    socket.on('panic', function() {
+        helicopter();
+    });
 
     kiosk1.onclick = function() {
         socket.emit('kiosk1', 'Complete');
@@ -132,7 +135,7 @@
     };
     
     function helicopter() {
-        var msg = new SpeechSynthesisUtterance('here comes my attack helicopter');
+        var msg = new SpeechSynthesisUtterance('here comes an attack helicopter');
         window.speechSynthesis.speak(msg);
         var talk = 'soi';
         for (let index = 1; index < 10; index++) {
