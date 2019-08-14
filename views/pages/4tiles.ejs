@@ -113,7 +113,9 @@
         }
     }
     function speach(data) {
-        if (data != "Complete") {
+        if (data == "F-C-P-S-ON") {
+            new Audio('/audio/another_one.mp3').play()
+        } else if (data != "Complete") {
             var msg = new SpeechSynthesisUtterance(data);
             window.speechSynthesis.speak(msg);
         }
