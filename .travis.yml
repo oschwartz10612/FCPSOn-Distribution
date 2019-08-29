@@ -1,16 +1,6 @@
-sudo: false
 language: node_js
 node_js:
-- node
-branches:
-  only:
-  - master
-deploy:
-  provider: gae
-  skip_cleanup: true
-  keyfile: client-secret.json
-  project: fcpson-distrbution
-  default: true
-before_install:
-- openssl aes-256-cbc -K $encrypted_ce88f7f76251_key -iv $encrypted_ce88f7f76251_iv
-  -in client-secret.json.enc -out client-secret.json -d
+  - "10"
+
+script:
+  - npm run lint

@@ -19,7 +19,7 @@ p {
 .center {
     text-align: center;
     position: relative;
-    top: 65%;
+    top: 50%;
     transform: translateY(-50%);
 }
 .button {
@@ -31,22 +31,18 @@ p {
     background-size: 250px 250px;
 }
 #kiosk1 {
-    background-image: url("/img/Max.png");
     background-color: #ffd359;
     margin-left: 5px;
 }
 #kiosk2 {
-    background-image: url("/img/Derek.png");
     background-color: #4287f5;
     margin-right: 5px;
 }
 #kiosk3 {
-    background-image: url("/img/Kristina.png");
     background-color: #45f542;
     margin-left: 5px;
 }
 #kiosk4 {
-    background-image: url("/img/others.png");
     background-color: #bd59ff;
     margin-right: 5px;
 }

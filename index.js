@@ -2,7 +2,7 @@ var app = require('express')();
 const express = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -71,4 +71,6 @@ io.on('connection', function(client) {
  
 
 server.listen(port);
+console.log('Server running!');
+
   

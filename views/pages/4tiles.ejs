@@ -37,7 +37,11 @@
 
 <script src="/socket.io.js"></script>
 <script>
-    var socket = io.connect('http://fcpson.ab19.site');
+
+    var url = window.location.href
+    var arr = url.split("/");
+    var result = arr[0] + "//" + arr[2]
+    var socket = io.connect(result);
 
     var kiosk1Text = document.getElementById('kiosk1Text');
     var kiosk2Text = document.getElementById('kiosk2Text');
@@ -82,7 +86,7 @@
         speach(data);
     });
     socket.on('panic', function() {
-        helicopter();
+        speach('Panic!');
     });
 
     kiosk1.onclick = function() {
@@ -101,21 +105,8 @@
         socket.emit('panic', 'panic');
     };
 
-    function helicopter() {
-        var msg = new SpeechSynthesisUtterance('here comes an attack helicopter');
-        window.speechSynthesis.speak(msg);
-        var talk = 'soi';
-        for (let index = 1; index < 10; index++) {
-            var msg = new SpeechSynthesisUtterance(talk);
-            msg.rate = index;
-            window.speechSynthesis.speak(msg);
-            talk += ' soi';
-        }
-    }
     function speach(data) {
-        if (data == "F-C-P-S-ON") {
-            new Audio('/audio/another_one.mp3').play()
-        } else if (data != "Complete") {
+        if (data != "Complete") {
             var msg = new SpeechSynthesisUtterance(data);
             window.speechSynthesis.speak(msg);
         }
