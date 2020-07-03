@@ -17,7 +17,7 @@ When a location and kiosk # are received the corresponding icon will flash and t
 
 See below for labeled UI.
 
-[](docs/screenshot.png)
+![Screen Shot](/docs/screenshot.png)
 
 ## The API
 
