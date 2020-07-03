@@ -1,0 +1,6 @@
+{
+    "name": "FCPSON Distribution",
+    "description": "A simple webapp to broadcast search events",
+    "repository": "https://github.com/oschwartz10612/FCPSOn-Distribution",
+    "keywords": ["node", "express"]
+  }
