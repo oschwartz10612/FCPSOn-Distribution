@@ -11,18 +11,26 @@ Easy deployment can be done using Heroku. Click the button below and follow the 
 
 The web UI can be accessed at the root URL provided by Heroku or by adding `/4` or `/6` to select the desired number of boxes respectively.
 
+## The Display
+
+When a location and kiosk # are received the corresponding icon will flash and the location will be displayed in addition to a text to speech readout.
+
+See below for labeled UI.
+
+[](docs/screenshot.png)
+
 ## The API
 
-A `post` request can be made to the root URL with the following JSON body:
+A `post` request can be made to `/update` with the following JSON body:
 
 ```json
 {
-  "location": <Location String>,
-  "kiosk": <Kiosk #>
+  "location": <LocationString>,
+  "kiosk": <Kiosk#>
 }
 ```
 
-Where `<Location String>` is any string containing the location of the item and `<Kiosk #>` is a number 1-6 representing the corresponding icon that should display the location. 
+Where `<LocationString>` is any string containing the location of the item and `<Kiosk#>` is a number 1-6 representing the corresponding icon that should display the location. 
 
 ### Using With Google Sheets
 
@@ -40,7 +48,7 @@ function updateBoard(location, kiosk) {
     'contentType': 'application/json',
     'payload' : JSON.stringify(data)
   };
-  UrlFetchApp.fetch('<Your Heroku URL>', options);
+  UrlFetchApp.fetch('<Your Heroku URL>/update', options);
   return "Done";
 }
 ```
